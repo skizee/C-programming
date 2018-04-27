@@ -30,13 +30,14 @@ int main()
 		int k = i;
 
 		for (int j = i + 1; j <= size - 1; j++)
-
+		 {
 			if (arr[j] < min)
 			{
 				min = arr[j];
 				k = j;
 			}
-
+		}
+		
 		int x = arr[i];
 		arr[i] = arr[k];
 		arr[k] = x;
