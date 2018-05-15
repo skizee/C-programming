@@ -1,4 +1,3 @@
-
 class counts
 {
 
@@ -21,7 +20,6 @@ private:
 counts::counts(int *a, int b, int c)
 {
 	arr = a;
-	
 	size=b;
 	x=c;
 }
@@ -42,6 +40,7 @@ int counts::getCounts()
 }
 
 
+
 void counts::print() const
 {
 	for (int i = 0; i <= size - 1; i++)
@@ -51,18 +50,27 @@ void counts::print() const
 
 }
 
+void counts::reset(int *arr2, int m, int y)
+{
+	counts p(arr2, 5, 3);
+	p.print();
+	cout << "Count: " << p.getCounts() << endl;
+
+}
+
 int main() {
 
 
-	int b[5] = { 5,6,7,8,9 };
+	int b[4] = { 1,2,3,4 };
 
-	counts c(b, 5, 3);
-
+	counts c(b, 4, 3);
 	c.print();
+	cout <<"Count: "<< c.getCounts() << endl;
 
-	cout << endl;
+	int arr2[5] = { 5,6,7,8,9};
 
-	cout << c.getCounts() << endl;
+	c.reset(arr2, 5, 3);
+
 
 	
 
