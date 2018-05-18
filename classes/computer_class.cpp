@@ -1,3 +1,5 @@
+char s[40]; // Помощна
+
 class computer
 {
 public:
@@ -11,14 +13,14 @@ public:
 	int get_score() const;
 
 private:
-	char name[20];
+	char *name;
 	double price;
 	int score;
 };
 
 computer::computer()
 {
-	char name[20];
+	char *name;
 	price = 0;
 	score = 0;
 
@@ -27,7 +29,10 @@ computer::computer()
 void computer::read()
 {
 	cout << "Enter model name: ";
-	cin >> name;
+	cin >> s;
+	
+	name=new char[strlen(s)+1];
+	strcpy(name, s);
 
 	cout << "Enter price: ";
 	cin >> price;
